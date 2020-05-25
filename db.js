@@ -18,7 +18,7 @@ const mongoose = require("mongoose");
 //   }
 // );
 
-//Mongo Atlas
+// Mongo Atlas
 
 mongoose.connect(
   "mongodb+srv://chandan:help4you@cluster0-tx6h1.mongodb.net/chandan?retryWrites=true&w=majority",
