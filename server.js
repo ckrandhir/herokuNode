@@ -8,11 +8,23 @@ var employeeController = require("./controllers/employeeController.js");
 var port = process.env.PORT || 8080;
 var app = express();
 app.use(bodyParser.json());
-app.use(
-  cors({
-    origin: "https://ck-node-heroku.web.app"
-  })
-);
+
+
+
+
+var whitelist = ['https://ck-node-heroku.web.app', 'http://localhost:4200']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+
+
 
 app.listen(
   port, {
