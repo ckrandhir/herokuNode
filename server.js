@@ -24,6 +24,7 @@ var corsOptions = {
   }
 }
 
+app.use(cors(corsOptions));
 
 
 app.listen(
