@@ -9,15 +9,13 @@ var port = process.env.PORT || 8080;
 var app = express();
 app.use(bodyParser.json());
 app.use(
-  cors(
-    { origin: "http://localhost:4200" },
-    { origin: "https://ck-node-heroku.web.app" }
-  )
+  cors({
+    origin: "https://ck-node-heroku.web.app"
+  })
 );
 
 app.listen(
-  port,
-  {
+  port, {
     useUnifiedTopology: true,
   },
   () => {
